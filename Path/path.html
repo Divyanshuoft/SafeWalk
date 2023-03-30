@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Find Path</title>
+    <link rel="stylesheet" href="path.css">
+</head>
+<body>
+    <br>
+    <header class="l-header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="/assets/images/logo.png" alt="Your Website Name" height="50px" style="display: block; margin: 10px auto;">
+
+                <ul class="nav-links">
+                    <li><a href="#home">Find Path</a></li>
+                    <li><a href="#about">Find Partner</a></li>
+                    <li><a href="#report">Report</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">About</a></li>
+                </ul>
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+    <h1>Map of University of Toronto Scarborough</h1>
+    <div id="map"></div>
+    <div class="search-container">
+        <label for="start">Start:</label>
+        <input type="text" id="start" placeholder="Enter starting location">
+      
+        <label for="end">End:</label>
+        <input type="text" id="end" placeholder="Enter destination">
+      
+        <button onclick="calculateRoute()">Get Route</button>
+    </div>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG2RwIskcMb15g0DGUq6wZ7B-S-MsttnI"></script>
+    <script>
+        var map;
+        var directionsService;
+        var directionsRenderer;
+        function initMap() {
+            var utsc = {lat: 43.7863, lng: -79.1897};
+    
+            map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: utsc
+            });
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer({
+                map: map
+            });
+        }
+    
+        function calculateRoute() {
+    var start = document.getElementById('start').value;
+    var end = document.getElementById('end').value;
+
+    var request = {
+        origin: start,
+        destination: end,
+        travelMode: 'DRIVING',
+        waypoints: [
+            {location: {lat: 43.789052, lng: -79.189879}, stopover: false}
+        ]
+    };
+
+    directionsService.route(request, function(result, status) {
+        if (status == 'OK') {
+            directionsRenderer.setDirections(result);
+        }
+    });
+}
+
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG2RwIskcMb15g0DGUq6wZ7B-S-MsttnI&callback=initMap"></script>
+    
+</body>
+</html>

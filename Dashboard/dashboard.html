@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <br>
+    <header class="l-header">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="/assets/images/logo.png" alt="Your Website Name" height="50px" style="display: block; margin: 10px auto;">
+
+                <ul class="nav-links">
+                    <li><a href="/Path/path.html">Find Path</a></li>
+                    <li><a href="#about">Find Partner</a></li>
+                    <li><a href="#report">Report</a></li>
+                    <li><a href="#report">My Profile</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#blog">About</a></li>
+                </ul>
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+	<h1>Map of University of Toronto at Scarborough</h1>
+	<div id="map"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG2RwIskcMb15g0DGUq6wZ7B-S-MsttnI"></script>
+    <script>
+        function initMap() {
+          var utsc = {lat: 43.7863, lng: -79.1897};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 16,
+            center: utsc
+          });
+          
+          // load the crime data
+          var crimes = [
+            {lat: 43.7825, lng: -79.1897, type: 'theft'},
+            {lat: 43.7835, lng: -79.1867, type: 'assault'},
+            {lat: 43.7845, lng: -79.1880, type: 'burglary'}
+          ];
+      
+          // add markers for each crime incident
+          for (var i = 0; i < crimes.length; i++) {
+            var marker = new google.maps.Marker({
+              position: crimes[i],
+              map: map,
+              icon: 'https://maps.google.com/mapfiles/kml/shapes/caution.png',
+              title: crimes[i].type // set the marker title to the crime type
+            });
+      
+            // add click listener to display crime type
+            marker.addListener('click', function() {
+              var infoWindow = new google.maps.InfoWindow({
+                content: marker.getTitle()
+              });
+              infoWindow.open(map, marker);
+            });
+          }
+        }
+      </script>
+      
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDG2RwIskcMb15g0DGUq6wZ7B-S-MsttnI&callback=initMap"></script>
+</body>
+</html>
