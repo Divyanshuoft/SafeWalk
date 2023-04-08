@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Report a Crime Incident</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		input[type="text"], textarea, select {
+			margin: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+			margin: 10px;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+
+		label {
+			margin-top: 10px;
+			display: block;
+			font-weight: bold;
+		}
+        form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		
+		input[type="text"], textarea, select {
+			margin: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			width: 100%;
+			box-sizing: border-box;
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+			margin: 10px;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+        body {
+	font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-color: #f2f2f2;
+}
+
+h1 {
+	text-align: center;
+	margin-top: 20px;
+}
+
+form {
+	background-color: #fff;
+	padding: 20px;
+	margin-top: 20px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+	max-width: 500px;
+	margin: auto;
+}
+body {
+			margin: 0;
+			padding: 0;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+			background-image: url('https://wallpapercave.com/wp/wp9046799.jpg');
+			background-size: cover;
+			background-position: center center;
+		}
+
+		h1 {
+			margin: 0;
+			padding: 20px;
+			text-align: center;
+		}
+		
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 50px auto;
+			width: 80%;
+			background-color: #FFFFFF;
+			border-radius: 10px;
+			padding: 20px;
+			box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+		}
+		
+		input[type="text"], textarea, select, input[type="date"], input[type="time"], input[type="number"], input[type="file"] {
+			margin: 10px;
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			width: 100%;
+			box-sizing: border-box;
+			background-color: #F5F5F5;
+			box-shadow: inset 0px 0px 3px 0px rgba(0,0,0,0.2);
+			transition: all 0.3s ease-in-out;
+		}
+		
+		input[type="text"]:hover, textarea:hover, select:hover, input[type="date"]:hover, input[type="time"]:hover, input[type="number"]:hover, input[type="file"]:hover {
+			background-color: #EEEEEE;
+		}
+
+		input[type="text"]:focus, textarea:focus, select:focus, input[type="date"]:focus, input[type="time"]:focus, input[type="number"]:focus, input[type="file"]:focus {
+			background-color: #FFFFFF;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+		}
+		
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			width: 100%;
+			margin: 10px;
+			transition: all 0.3s ease-in-out;
+		}
+		
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+
+		label {
+			margin-top: 10px;
+			display: block;
+			font-weight: bold;
+			color: #333333;
+		}
+
+		label span {
+			color: red;
+			font-size: 18px;
+			vertical-align: middle;
+			margin-left: 5px;
+		}
+
+		.error {
+			color: red;
+			font-size: 14px;
+			margin: 5px 0 0;
+			display: none;
+		}
+
+		.form-control.error {
+			border-color: red;
+			box-shadow: 0px 0px 5px 0px rgba(255,0,0,0.2);
+		}
+
+		.file-upload-wrapper {
+			position: relative;
+			display: inline-block;
+			overflow: hidden;
+			margin-top: 10px;
+		}
+        h1{
+            text-align: center;
+            color: #EEEEEE;
+            margin-top: 20px;
+        }
+        footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.endnote {
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+	</style>
+</head>
+<body>
+      
+	<h1>Report a Crime Incident</h1>
+	<form>
+		<label for="crime-type">Type of Crime:</label>
+		<input type="text" id="crime-type" name="crime-type" placeholder="Enter type of crime" required>
+
+		<label for="crime-description">Crime Description:</label>
+		<textarea id="crime-description" name="crime-description" placeholder="Enter crime description" required></textarea>
+
+		<label for="crime-rating">Rate the crime out of 10:</label>
+		<select id="crime-rating" name="crime-rating" required>
+			<option value="">Select a rating</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+		</select>
+
+		<label for="crime-location">Location of Crime:</label>
+		<input type="text" id="crime-location" name="crime-location" placeholder="Enter location of crime" required>
+
+		<label for="crime-date">Date of Crime:</label>
+		<input type="date" id="crime-date" name="crime-date" required>
+
+		<label for="crime-time">Time of Crime:</label>
+		<input type="time" id="crime-time" name="crime-time" required>
+
+		<label for="crime-suspect-description">Suspect Description:</label>
+		<textarea id="crime-suspect-description" name="crime-suspect-description" placeholder="Enter suspect description"></textarea>
+
+		<label for="crime-witnesses">Number of Witnesses:</label>
+		<input type="number" id="crime-witnesses" name="crime-witnesses" placeholder="Enter number of witnesses" min="0">
+
+		<label for="crime-image">Upload an image of the crime:</label>
+		<input type="file" id="crime-image" name="crime-image" accept="image/*">
+
+		<input type="submit" value="Submit Report">
+        <footer>
+            <div class="container">
+              <p class="endnote">In a world that is constantly evolving and growing, security and safety have become increasingly important. Crime is a significant threat to individuals, families, and society as a whole. Criminal activities can range from petty theft and fraud to serious crimes like assault, robbery, and murder. It can impact the physical, emotional, and financial well-being of individuals and their loved ones.</p>
+            </div>
+          </footer>
+	</form>
+</body>
+</html>
